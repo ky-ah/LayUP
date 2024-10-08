@@ -1,0 +1,7 @@
+torch
+torchvision
+numpy
+timm
+tqdm
+scikit-learn
+wandb
