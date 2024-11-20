@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 from timm.models.layers import Mlp
-from typing import Any, Callable, Union, Optional
+from typing import Any, Callable, Union, Optional, Tuple
 
 from timm.models.vision_transformer import (
     Block,
@@ -211,8 +211,8 @@ class SSFPatchEmbed(PatchEmbed, SSFModuleMinIn):
 class SSFVisionTransformer(VisionTransformer, SSFModuleMinIn):
     def __init__(
         self,
-        img_size: Union[int, torch.Tuple[int]] = 224,
-        patch_size: Union[int, torch.Tuple[int]] = 16,
+        img_size: Union[int, Tuple[int, int]] = 224,
+        patch_size: Union[int, Tuple[int, int]] = 16,
         in_chans: int = 3,
         num_classes: int = 1000,
         global_pool: str = "token",
